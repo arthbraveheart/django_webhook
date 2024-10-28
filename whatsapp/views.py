@@ -19,7 +19,7 @@ def whatsapp_reply(request):
 
         # Suas credenciais da conta Twilio
         account_sid = "AC069f1485becb681509aa3ea0b36dec02"  # Substitua pelo seu Account SID
-        auth_token = "d53f84c881d473e27613feb55258c774"  # Substitua pelo seu Auth Token
+        auth_token = "5b8babb909ba51469d44f86aa9c048c2"  # Substitua pelo seu Auth Token
         client = Client(account_sid, auth_token)
 
         # MessageSid da mensagem recebida

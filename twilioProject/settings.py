@@ -29,6 +29,10 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'd7d1-186-233-45-18.ngrok-free.app',
+    '2f1b-186-233-35-170.ngrok-free.app',
+    '4ba2-186-233-35-132.ngrok-free.app',
+    '8808-186-233-35-132.ngrok-free.app',
+    '126b-186-233-37-90.ngrok-free.app'
 ]
 
 
@@ -42,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whatsapp.apps.WhatsappConfig',
+    'surveys.apps.SurveysConfig',
     #'whatsapp',
 ]
 
