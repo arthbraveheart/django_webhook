@@ -16,9 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth.views import LogoutView
+from django.views.generic.base import TemplateView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('whatsapp/', include('whatsapp.urls')),
     path('survey/', include('surveys.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path("home", TemplateView.as_view(template_name="main/home.html"), name="home"),
+    path('authz/', include('authz.urls')),
+
 ]

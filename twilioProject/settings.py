@@ -47,8 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whatsapp.apps.WhatsappConfig',
     'surveys.apps.SurveysConfig',
+    'authz.apps.AuthzConfig',
     'crispy_forms',
-    'crispy_bootstrap4',
+    'crispy_bootstrap5',
     #'whatsapp',
 ]
 
@@ -140,4 +141,15 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Crispy templates
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+
+# settins for users login
+
+LOGIN_REDIRECT_URL = '/survey/survey/'           # Redirect after login
+LOGOUT_REDIRECT_URL = '/accounts/login/'  # Redirect after logout
+LOGIN_URL = '/accounts/login/'     # The login page URL
+

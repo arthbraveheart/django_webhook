@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from .forms import SurveyForm
 from .models import SurveyResponse
+from django.contrib.auth import login
+from django.contrib.auth.views import LoginView
+from .forms import CustomLoginForm, RegisterForm
 
 def survey_view(request):
     if request.method == 'POST':
@@ -15,7 +18,8 @@ def survey_view(request):
             return redirect('success')
     else:
         form = SurveyForm()
-    return render(request, 'survey.html', {'form': form})
+    return render(request, 'forms/survey.html', {'form': form})
 
 def success_view(request):
-    return render(request, 'success.html')
+    return render(request, 'forms/success.html')
+
