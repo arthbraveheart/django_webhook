@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.models import User
@@ -24,15 +24,7 @@ def sign_up(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
-            user = RegisterForm.objects.create(
-
-                email=form.cleaned_data['email'],
-                phone_number=form.cleaned_data['phone_number'],
-                username=form.cleaned_data['username'],
-                password1=form.cleaned_data['password1'],
-
-
-            )#form.save()
+            user = form.save()
             login(request, user)
             return redirect('/home')
     else:

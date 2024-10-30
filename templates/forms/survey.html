@@ -1,14 +1,10 @@
-{% load crispy_forms_tags %}
+{% extends "main/base.html"%}
+{% block title %}Surveys{% endblock %}
+{% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Survey</title>
-    <!-- Include Bootstrap CSS if needed -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-<body>
+{% load crispy_forms_tags %}
+{% block content %}
+
     <div class="container">
         <h2>Survey Form</h2>
         <form method="post">
@@ -17,5 +13,4 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-</body>
-</html>
+{% endblock %}

@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Success</title>
-</head>
-<body>
+{% extends "main/base.html"%}
+{% block title %}Surveys{% endblock %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+{% block content %}
     <h1>Thank you for your submission!</h1>
     <p>Your responses have been recorded successfully.</p>
     <a href="{% url 'survey' %}">Go back to the survey</a>
-</body>
-</html>
+{% endblock %}

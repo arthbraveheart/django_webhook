@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,17 +10,23 @@
       crossorigin="anonymous"
     />
     <title>{% block title %}My Site{% endblock %}</title>
+  {% load static %}
+  <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <link rel="stylesheet"  href="{% static 'shape.css' %}">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
+      <a class="navbar-brand" href="https://mucho.com.br" target="_blank">
+      <img src="{% static 'brand.png' %}" alt="" width="70" height="54">
+    </a>
         <div>
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="/home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/create-post">Post</a>
+              <a class="nav-link" href="https://app.powerbi.com/view?r=eyJrIjoiMTI2NjYxNGMtYzhmMS00MzcyLTliOTYtODliNmY2Zjk4ZDg4IiwidCI6ImY1M2VlOTM1LWUxNzEtNDY3Ny04NmY1LWU0NDUxNjc3ZGJiYiJ9" target="_blank">Report</a>
             </li>
           </ul>
         </div>

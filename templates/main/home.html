@@ -1,7 +1,7 @@
 {% extends "main/base.html"%}
 
 {% block title %}Home{% endblock %}
-
+{% load static %}
 {% block content %}
 {% if user.is_authenticated %}
 Hi {{ user.username }}!

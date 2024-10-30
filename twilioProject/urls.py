@@ -22,10 +22,11 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('authz/', include('authz.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('whatsapp/', include('whatsapp.urls')),
     path('survey/', include('surveys.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
     path("home", TemplateView.as_view(template_name="main/home.html"), name="home"),
-    path('authz/', include('authz.urls')),
+
 
 ]
