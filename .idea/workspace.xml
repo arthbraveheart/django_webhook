@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2cc1f21-98bf-482e-bf18-1eefdb572f63" name="Changes" comment="Webhook creation and store the mensages recieved.">
-      <change afterPath="$PROJECT_DIR$/static/shape.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/performance/templates/dashboard/dash_app.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/performance/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/performance/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authz/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/authz/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authz/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authz/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forms/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/performance/dash_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/performance/dash_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/shape.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/shape.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/forms/survey.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/survey.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/twilioProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/twilioProject/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/twilioProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/twilioProject/urls.py" afterDir="false" />
     </list>
@@ -27,14 +30,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="Python Script" />
         <option value="CSS File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/performance" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -61,13 +64,14 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "Django Server.twilioProject.executor": "Run",
+    "Python.dash_app.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/var/root/PycharmProjects/twilioProject/authz",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/var/root/PycharmProjects/twilioProject/performance/templates",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -90,10 +94,34 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/performance/templates" />
       <recent name="$PROJECT_DIR$/authz" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.dash_app">
+    <configuration name="dash_app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="twilioProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/performance" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/performance/dash_app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="twilioProject" type="Python.DjangoServer" factoryName="Django server">
       <module name="twilioProject" />
       <option name="ENV_FILES" value="" />
@@ -119,6 +147,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.dash_app" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -150,7 +183,7 @@
       <workItem from="1729794680199" duration="476000" />
       <workItem from="1729867650420" duration="733000" />
       <workItem from="1730205007679" duration="3713000" />
-      <workItem from="1730212127438" duration="17028000" />
+      <workItem from="1730212127438" duration="25937000" />
     </task>
     <task id="LOCAL-00001" summary="Webhook creation and store the mensages recieved.">
       <option name="closed" value="true" />
@@ -188,5 +221,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Webhook creation and store the mensages recieved." />
     <option name="LAST_COMMIT_MESSAGE" value="Webhook creation and store the mensages recieved." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/twilioProject$dash_app.coverage" NAME="dash_app Coverage Results" MODIFIED="1730284179759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/performance" />
   </component>
 </project>

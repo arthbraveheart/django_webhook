@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
       <a class="navbar-brand" href="https://mucho.com.br" target="_blank">
-      <img src="{% static 'brand.png' %}" alt="" width="70" height="54">
+      <img src="{% static 'brand.png' %}" alt="">
     </a>
         <div>
           <ul class="navbar-nav">
@@ -33,13 +33,13 @@
         <div>
           <ul class="navbar-nav">
             {% if user.is_authenticated %}
-            <span class="navbar-text">Logged in as {{user.username}} | </span>
+            <span class="navbar-text"> {{user.username}} | </span>
             <li class="nav-item">
-              <a class="nav-link" href="/logout">Logout</a>
+              <a class="nav-link" href="accounts/logout">Logout</a>
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
             </li>
             {% endif %}
           </ul>

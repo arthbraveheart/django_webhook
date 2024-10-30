@@ -27,6 +27,7 @@ urlpatterns = [
     path('whatsapp/', include('whatsapp.urls')),
     path('survey/', include('surveys.urls')),
     path("home", TemplateView.as_view(template_name="main/home.html"), name="home"),
+    path('dashboard/', include('performance.urls')),
 
 
 ]

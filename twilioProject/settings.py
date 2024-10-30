@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'whatsapp.apps.WhatsappConfig',
     'surveys.apps.SurveysConfig',
     'authz.apps.AuthzConfig',
+    'performance',
+    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
     'crispy_forms',
     'crispy_bootstrap5',
     #'whatsapp',
@@ -156,3 +158,4 @@ LOGIN_REDIRECT_URL = '/survey/survey/'           # Redirect after login
 LOGOUT_REDIRECT_URL = '/accounts/login/'  # Redirect after logout
 LOGIN_URL = '/accounts/login/'     # The login page URL
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
