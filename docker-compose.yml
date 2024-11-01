@@ -1,4 +1,13 @@
 services:
+  db:
+      image: postgres:15
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+      environment:
+        - POSTGRES_DB=djangos
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=1728
+
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
@@ -14,14 +23,7 @@ services:
     depends_on:
       - db
 
-  db:
-    image: postgres:15
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=djangos
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=1728
+  
 
 volumes:
   postgres_data:
