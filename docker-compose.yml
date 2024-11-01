@@ -18,7 +18,7 @@ services:
     volumes:
       - .:/app
     ports:
-      - "8000:8000"
+      - "10000:10000"
     environment:
       - DEBUG=1
       - SECRET_KEY=I1RoZW8yNjA3
