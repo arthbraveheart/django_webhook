@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
+    'django-webhook.onrender.com',
     'd7d1-186-233-45-18.ngrok-free.app',
     '2f1b-186-233-35-170.ngrok-free.app',
     '4ba2-186-233-35-132.ngrok-free.app',
