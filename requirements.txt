@@ -23,6 +23,8 @@ django-plotly-dash==2.4.3
 dpd-components==0.1.0
 Flask==3.0.3
 frozenlist==1.4.1
+gunicorn>=21.2.0
+whitenoise>=6.5.0
 idna==3.10
 importlib_metadata==8.5.0
 itsdangerous==2.2.0
