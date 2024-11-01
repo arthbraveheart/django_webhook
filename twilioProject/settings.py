@@ -101,9 +101,7 @@ DATABASES = {
         'PASSWORD': '1728',
         'HOST': 'db',
         'PORT': '5432',
-        'OPTIONS': {
-            'sslmode': 'require',  # Require SSL for the connection
-        },
+        
         
     }
     
