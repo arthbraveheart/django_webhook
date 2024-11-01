@@ -14,12 +14,12 @@ services:
       sh -c "python manage.py makemigrations &&
       python manage.py migrate &&
       python manage.py collectstatic --noinput &&
-      gunicorn --bind 0.0.0.0:$PORT --workers 3 twilioProject.wsgi:application"
+      gunicorn --bind 0.0.0.0:8000 twilioProject.wsgi:application"
     
     volumes:
       - .:/app
     ports:
-      - "10000:10000"
+      - "8000:8000"
     environment:
       - DEBUG=1
       - SECRET_KEY=I1RoZW8yNjA3
