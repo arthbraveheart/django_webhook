@@ -22,6 +22,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project
 COPY . /app/
 
+# Collect static files
+RUN python manage.py collectstatic --noinput
+
 # Create a non-root user
 RUN useradd -m indigo && chown -R indigo:indigo /app
 USER indigo
