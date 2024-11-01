@@ -23,12 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-18p--5$%c@ft#m3(vn)c464-n*ol0v^m2$!s-6w!e6vw-j$bbt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'django-webhook.onrender.com',
+    '0.0.0.0',
     'd7d1-186-233-45-18.ngrok-free.app',
     '2f1b-186-233-35-170.ngrok-free.app',
     '4ba2-186-233-35-132.ngrok-free.app',
@@ -93,10 +94,10 @@ WSGI_APPLICATION = 'twilioProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':  'conversations',  #BASE_DIR / 'db.sqlite3',
+        'NAME':  'djangos',  #BASE_DIR / 'db.sqlite3',
         'USER': 'postgres' ,
         'PASSWORD': '1728',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '5432',
     }
 }
