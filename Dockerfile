@@ -25,3 +25,5 @@ COPY . /app/
 # Create a non-root user
 RUN useradd -m indigo && chown -R indigo:indigo /app
 USER indigo
+# Use gunicorn for production
+CMD exec gunicorn --bind 0.0.0.0:$PORT --workers 3 twilioProject.wsgi:application
