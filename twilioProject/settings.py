@@ -101,7 +101,12 @@ DATABASES = {
         'PASSWORD': '1728',
         'HOST': 'db',
         'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',  # Require SSL for the connection
+        },
+        
     }
+    
 }
 
 
@@ -163,4 +168,13 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 LOGIN_REDIRECT_URL = '/survey/survey/'           # Redirect after login
 LOGOUT_REDIRECT_URL = '/accounts/login/'  # Redirect after logout
 LOGIN_URL = '/accounts/login/'     # The login page URL
+
+
+# security
+
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
 
