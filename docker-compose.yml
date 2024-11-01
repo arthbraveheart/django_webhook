@@ -13,7 +13,7 @@ services:
     command:  >
       sh -c "python manage.py makemigrations &&
       python manage.py migrate &&
-      python manage.py runserver 0.0.0.0:10000"
+      gunicorn --bind 0.0.0.0:$PORT --workers 3 twilioProject.wsgi:application"
     
     volumes:
       - .:/app
