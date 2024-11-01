@@ -1,10 +1,7 @@
 from django.shortcuts import render
-
-# Create your views here.
-
+from twilioProject.settings import TWILIO_KEY
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-#from django.shortcuts import render
 from .models import Conversa
 from twilio.twiml.messaging_response import MessagingResponse
 from twilio.rest import Client
@@ -19,7 +16,7 @@ def whatsapp_reply(request):
 
         # Suas credenciais da conta Twilio
         account_sid = "AC069f1485becb681509aa3ea0b36dec02"  # Substitua pelo seu Account SID
-        auth_token = "5b8babb909ba51469d44f86aa9c048c2"  # Substitua pelo seu Auth Token
+        auth_token = TWILIO_KEY  # Substitua pelo seu Auth Token
         client = Client(account_sid, auth_token)
 
         # MessageSid da mensagem recebida

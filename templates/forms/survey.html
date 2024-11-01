@@ -4,7 +4,7 @@
 
 {% load crispy_forms_tags %}
 {% block content %}
-
+{% if user.is_authenticated %}
     <div class="container">
         <h2>Survey Form</h2>
         <form method="post">
@@ -13,4 +13,9 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+{% else %}
+    
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">Log In</a>
+{% endif %}    
 {% endblock %}

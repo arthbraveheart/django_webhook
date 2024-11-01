@@ -5,16 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2cc1f21-98bf-482e-bf18-1eefdb572f63" name="Changes" comment="Webhook creation and store the mensages recieved.">
-      <change afterPath="$PROJECT_DIR$/static/shape.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emptys/formss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2023a024-49f8-490e-8bee-227ea93f9a16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2023a024-49f8-490e-8bee-227ea93f9a16.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2023a024-49f8-490e-8bee-227ea93f9a16/storage_v2/_src_/database/conversations.ULSdVw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2023a024-49f8-490e-8bee-227ea93f9a16/storage_v2/_src_/database/conversations.ULSdVw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authz/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/authz/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authz/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authz/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forms/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/shape.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/shape.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surveys/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/surveys/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surveys/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/surveys/migrations/0002_profile_loginevent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/surveys/migrations/0003_delete_profile.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/surveys/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/surveys/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surveys/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/surveys/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/forms/survey.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/survey.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/twilioProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/twilioProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twilioProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/twilioProject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/whatsapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/whatsapp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +34,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Python Script" />
         <option value="CSS File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dash" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -57,43 +68,71 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.twilioProject.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/var/root/PycharmProjects/twilioProject/authz",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.editor.code.editing",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.twilioProject.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/var/root/PycharmProjects/twilioProject/authz&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor.code.editing&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "directory"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;
     ],
-    "DatabaseDriversLRU": [
-      "postgresql"
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/authz" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Database Script.console_2.sql">
+    <configuration name="console_2.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/2023a024-49f8-490e-8bee-227ea93f9a16/console_2.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <configuration name="dash_app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="twilioProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/performance" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/performance/dash_app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="twilioProject" type="Python.DjangoServer" factoryName="Django server">
       <module name="twilioProject" />
       <option name="ENV_FILES" value="" />
@@ -119,6 +158,12 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.console_2.sql" />
+        <item itemvalue="Python.dash_app" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -188,5 +233,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Webhook creation and store the mensages recieved." />
     <option name="LAST_COMMIT_MESSAGE" value="Webhook creation and store the mensages recieved." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/twilioProject$dash_app.coverage" NAME="dash_app Coverage Results" MODIFIED="1730284179759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/performance" />
   </component>
 </project>

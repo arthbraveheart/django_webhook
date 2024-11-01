@@ -1,5 +1,5 @@
 .container-fluid img {
              /* Fixed position to keep it at the bottom left */
-            height: 10px;
+            height: auto;
 
         }

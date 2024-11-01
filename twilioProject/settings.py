@@ -32,9 +32,10 @@ ALLOWED_HOSTS = [
     '2f1b-186-233-35-170.ngrok-free.app',
     '4ba2-186-233-35-132.ngrok-free.app',
     '8808-186-233-35-132.ngrok-free.app',
-    '126b-186-233-37-90.ngrok-free.app'
+    '00f4-186-233-37-67.ngrok-free.app',
 ]
 
+TWILIO_KEY = 'ed357667c68e8a0a1a555def906dc9e2'
 
 # Application definition
 

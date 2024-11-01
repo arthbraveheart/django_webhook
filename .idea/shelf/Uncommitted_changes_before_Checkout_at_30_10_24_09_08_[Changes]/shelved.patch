@@ -1,0 +1,121 @@
+Index: twilioProject/urls.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"\"\"\nURL configuration for twilioProject project.\n\nThe `urlpatterns` list routes URLs to views. For more information please see:\n    https://docs.djangoproject.com/en/4.2/topics/http/urls/\nExamples:\nFunction views\n    1. Add an import:  from my_app import views\n    2. Add a URL to urlpatterns:  path('', views.home, name='home')\nClass-based views\n    1. Add an import:  from other_app.views import Home\n    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')\nIncluding another URLconf\n    1. Import the include() function: from django.urls import include, path\n    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))\n\"\"\"\nfrom django.contrib import admin\nfrom django.urls import path, include\nfrom django.contrib.auth.views import LogoutView\nfrom django.views.generic.base import TemplateView\n\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('authz/', include('authz.urls')),\n    path('accounts/', include('django.contrib.auth.urls')),\n    path('whatsapp/', include('whatsapp.urls')),\n    path('survey/', include('surveys.urls')),\n    path(\"home\", TemplateView.as_view(template_name=\"main/home.html\"), name=\"home\"),\n    path('dashboard/', include('performance.urls')),\n\n\n]\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/twilioProject/urls.py b/twilioProject/urls.py
+--- a/twilioProject/urls.py	(revision 986197b28b2171cbf08342e659e262f37b357ea2)
++++ b/twilioProject/urls.py	(date 1730287609054)
+@@ -27,7 +27,7 @@
+     path('whatsapp/', include('whatsapp.urls')),
+     path('survey/', include('surveys.urls')),
+     path("home", TemplateView.as_view(template_name="main/home.html"), name="home"),
+-    path('dashboard/', include('performance.urls')),
++    #path('dashboard/', include('performance.urls')),
+ 
+ 
+ ]
+Index: templates/main/home.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends \"main/base.html\"%}\n\n{% block title %}Home{% endblock %}\n{% load static %}\n{% block content %}\n{% if user.is_authenticated %}\nHi {{ user.username }}!\n{% else %}\n<p>You are not logged in</p>\n<a href=\"{% url 'login' %}\">Log In</a>\n{% endif %}\n{% endblock %}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/main/home.html b/templates/main/home.html
+--- a/templates/main/home.html	(revision 986197b28b2171cbf08342e659e262f37b357ea2)
++++ b/templates/main/home.html	(date 1730287843322)
+@@ -5,6 +5,7 @@
+ {% block content %}
+ {% if user.is_authenticated %}
+ Hi {{ user.username }}!
++    <iframe src="performance-m.onrender.com" title="MyDash"></iframe>  
+ {% else %}
+ <p>You are not logged in</p>
+ <a href="{% url 'login' %}">Log In</a>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"d2cc1f21-98bf-482e-bf18-1eefdb572f63\" name=\"Changes\" comment=\"Webhook creation and store the mensages recieved.\">\n      <change afterPath=\"$PROJECT_DIR$/performance/templates/dashboard/dash_app.html\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/performance/urls.py\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/performance/views.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/vcs.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/performance/dash_app.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/performance/dash_app.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/static/shape.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/static/shape.css\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/templates/forms/survey.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/templates/forms/survey.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/templates/main/base.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/templates/main/base.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/twilioProject/settings.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/twilioProject/settings.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/twilioProject/urls.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/twilioProject/urls.py\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"DjangoConsoleOptions\" custom-start-script=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\">\n    <option name=\"myCustomStartScript\" value=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"CSS File\" />\n        <option value=\"Python Script\" />\n        <option value=\"HTML File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/performance\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;arthbraveheart&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/arthbraveheart/django_webhook.git&quot;,\n    &quot;accountId&quot;: &quot;1679c37d-edd6-414e-8489-96fb57945a52&quot;\n  }\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 2\n}</component>\n  <component name=\"ProjectId\" id=\"2nTTVrztvCrINZR47fkF84n0bUI\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"DefaultHtmlFileTemplate\": \"HTML File\",\n    \"Django Server.twilioProject.executor\": \"Run\",\n    \"Python.dash_app.executor\": \"Run\",\n    \"RunOnceActivity.OpenDjangoStructureViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"RunOnceActivity.pycharm.django.structure.promotion.once.per.project\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"django.template.preview.state\": \"SHOW_EDITOR\",\n    \"git-widget-placeholder\": \"main\",\n    \"last_opened_file_path\": \"/var/root/PycharmProjects/twilioProject/performance/templates\",\n    \"list.type.of.created.stylesheet\": \"CSS\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.detected.package.stylelint\": \"true\",\n    \"node.js.detected.package.tslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.stylelint\": \"\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"settings.editor.selected.configurable\": \"preferences.editor.code.editing\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  },\n  \"keyToStringList\": {\n    \"ChangesTree.GroupingKeys\": [\n      \"directory\"\n    ],\n    \"DatabaseDriversLRU\": [\n      \"postgresql\"\n    ]\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/performance/templates\" />\n      <recent name=\"$PROJECT_DIR$/authz\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Python.dash_app\">\n    <configuration name=\"dash_app\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"twilioProject\" />\n      <option name=\"ENV_FILES\" value=\"\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/performance\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/performance/dash_app.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"twilioProject\" type=\"Python.DjangoServer\" factoryName=\"Django server\">\n      <module name=\"twilioProject\" />\n      <option name=\"ENV_FILES\" value=\"\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n        <env name=\"DJANGO_SETTINGS_MODULE\" value=\"twilioProject.settings\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"launchJavascriptDebuger\" value=\"false\" />\n      <option name=\"port\" value=\"8000\" />\n      <option name=\"host\" value=\"localhost\" />\n      <option name=\"additionalOptions\" value=\"\" />\n      <option name=\"browserUrl\" value=\"\" />\n      <option name=\"runTestServer\" value=\"false\" />\n      <option name=\"runNoReload\" value=\"false\" />\n      <option name=\"useCustomRunCommand\" value=\"false\" />\n      <option name=\"customRunCommand\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Python.dash_app\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23339.19\" />\n        <option value=\"bundled-python-sdk-0029f7779945-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23339.19\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"d2cc1f21-98bf-482e-bf18-1eefdb572f63\" name=\"Changes\" comment=\"\" />\n      <created>1728996095261</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1728996095261</updated>\n      <workItem from=\"1728996116819\" duration=\"20149000\" />\n      <workItem from=\"1729025615091\" duration=\"21000\" />\n      <workItem from=\"1729075566150\" duration=\"1308000\" />\n      <workItem from=\"1729095308494\" duration=\"58000\" />\n      <workItem from=\"1729096543752\" duration=\"611000\" />\n      <workItem from=\"1729097699065\" duration=\"1693000\" />\n      <workItem from=\"1729183579712\" duration=\"11993000\" />\n      <workItem from=\"1729275633065\" duration=\"911000\" />\n      <workItem from=\"1729517624950\" duration=\"1867000\" />\n      <workItem from=\"1729706434090\" duration=\"615000\" />\n      <workItem from=\"1729740800123\" duration=\"689000\" />\n      <workItem from=\"1729794680199\" duration=\"476000\" />\n      <workItem from=\"1729867650420\" duration=\"733000\" />\n      <workItem from=\"1730205007679\" duration=\"3713000\" />\n      <workItem from=\"1730212127438\" duration=\"25937000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Webhook creation and store the mensages recieved.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1729024242013</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1729024242013</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Webhook creation and store the mensages recieved.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1729024661157</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1729024661157</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"3\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Webhook creation and store the mensages recieved.\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Webhook creation and store the mensages recieved.\" />\n  </component>\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\n    <SUITE FILE_PATH=\"coverage/twilioProject$dash_app.coverage\" NAME=\"dash_app Coverage Results\" MODIFIED=\"1730284179759\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/performance\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 986197b28b2171cbf08342e659e262f37b357ea2)
++++ b/.idea/workspace.xml	(date 1730287950920)
+@@ -5,17 +5,9 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="d2cc1f21-98bf-482e-bf18-1eefdb572f63" name="Changes" comment="Webhook creation and store the mensages recieved.">
+-      <change afterPath="$PROJECT_DIR$/performance/templates/dashboard/dash_app.html" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/performance/urls.py" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/performance/views.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/performance/dash_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/performance/dash_app.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/static/shape.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/shape.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/templates/forms/survey.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/survey.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/base.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/performance" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/main/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/home.html" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/twilioProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/twilioProject/settings.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/twilioProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/twilioProject/urls.py" afterDir="false" />
+     </list>
+@@ -37,7 +29,13 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
+-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/performance" />
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="ROOT_SYNC" value="DONT_SYNC" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory">{
+   &quot;lastFilter&quot;: {
+@@ -70,7 +68,7 @@
+     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "django.template.preview.state": "SHOW_EDITOR",
+-    "git-widget-placeholder": "main",
++    "git-widget-placeholder": "dash",
+     "last_opened_file_path": "/var/root/PycharmProjects/twilioProject/performance/templates",
+     "list.type.of.created.stylesheet": "CSS",
+     "node.js.detected.package.eslint": "true",
+@@ -183,7 +181,7 @@
+       <workItem from="1729794680199" duration="476000" />
+       <workItem from="1729867650420" duration="733000" />
+       <workItem from="1730205007679" duration="3713000" />
+-      <workItem from="1730212127438" duration="25937000" />
++      <workItem from="1730212127438" duration="27142000" />
+     </task>
+     <task id="LOCAL-00001" summary="Webhook creation and store the mensages recieved.">
+       <option name="closed" value="true" />
+@@ -212,7 +210,19 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="dash" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>

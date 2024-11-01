@@ -7,38 +7,147 @@ from crispy_forms.layout import Submit
 
 class SurveyForm(forms.Form):
     # Text question
-    name = forms.CharField(label="Your Name", max_length=100)
-    email = forms.EmailField(label="Your Email")
+    nome_representante = forms.CharField(label="Nome do Representante", max_length=100, required=True,)
+    regional = forms.CharField(label="Regional", max_length=100, required=True,)
+    cliente = forms.CharField(label="Cliente", max_length=100, required=True,)
+    cnpj_cliente = forms.CharField(label="CNPJ do Cliente", max_length=100, required=True,)
+    telefone_cliente = forms.CharField(label="Número do Telefone (Whatsapp)", max_length=100, required=True,)
 
     # Radio button question
     QUESTION_1_CHOICES = [
-        ('yes', 'Yes'),
-        ('no', 'No'),
-        ('maybe', 'Maybe'),
+        ('sim', 'Sim'),
+        ('não', 'Não'),
+        # ('maybe', 'Maybe'),
     ]
-    question_1 = forms.ChoiceField(
-        label="Do you like Django?",
+    loja_existe = forms.ChoiceField(
+        label="Loja Existe",
+        choices=QUESTION_1_CHOICES,
+        widget=forms.RadioSelect,
+    )
+    comprou_tubozan = forms.ChoiceField(
+        label="Já comprou da TUBOZAN",
         choices=QUESTION_1_CHOICES,
         widget=forms.RadioSelect,
     )
 
     # Another radio button question
     QUESTION_2_CHOICES = [
-        ('beginner', 'Beginner'),
-        ('intermediate', 'Intermediate'),
-        ('advanced', 'Advanced'),
+        ('precon', 'Precon'),
+        ('sical', 'Sical'),
+        ('tubozan', 'Tubozan'),
+        ('detali', 'Detali'),
+        ('decoralita', 'Decoralita'),
+        ('não', 'Não'),
     ]
-    question_2 = forms.ChoiceField(
-        label="What is your skill level in Django?",
+    QUESTION_3_CHOICES = [
+        ('price', 'Preco'),
+        ('fidelidade', 'Fidelidade com concorrente'),
+        ('qualidade', 'Qualidade do produto'),
+        ('prazo', 'Prazo de entrega'),
+        ('atendimento', 'Atendimento'),
+        ('outro_fornecedor', 'Já comprou de outro fornecedor este mes'),
+        ('não', 'Não'),
+    ]
+
+    QUESTION_4_CHOICES = [
+        ('depósito', 'Depósito Geral'),
+        ('ferragem', 'Ferragem'),
+        ('acabamento', 'Acabamento'),
+        ('tintas_imp', 'Tintas / Impermeabilizacao'),
+        ('hidraulica_ele', 'Hidráulica / Elétrica'),
+
+    ]
+
+    QUESTION_5_CHOICES = [
+        ('pequeno', 'Pequeno'),
+        ('medio', 'Médio'),
+        ('grande', 'Grande'),
+        ('atacado_dist', 'Atacado / Distribuidor'),
+
+
+    ]
+
+    QUESTION_6_CHOICES = [
+        ('relacionamento', 'Início de Relacionamento'),
+        ('price', 'Preco'),
+        ('fidelidade', 'Fidelidade com concorrente'),
+        ('qualidade', 'Qualidade do produto'),
+        ('prazo', 'Prazo de entrega'),
+        ('atendimento', 'Atendimento'),
+        ('variedade', 'Variedade de produtos'),
+
+    ]
+
+    QUESTION_7_CHOICES = [
+        ('tigre', 'Tigre'),
+        ('amanco', 'Amanco'),
+        ('fortlev', 'Fortlev'),
+        ('krona', 'Krona'),
+        ('plastilit', 'Plastilit'),
+
+    ]
+
+    QUESTION_8_CHOICES = [
+        ('muito_caro', 'Muito mais caro'),
+        ('caro', 'Um pouco mais caro'),
+        ('igual', 'Igual'),
+        ('barato', 'Umpouco mais barato'),
+
+    ]
+
+    conhece_dvg = forms.MultipleChoiceField(
+        label="Conhece alguma marca do GRUPO DVG",
         choices=QUESTION_2_CHOICES,
+        widget=forms.CheckboxSelectMultiple,
+    )
+
+    parou_de_comprar = forms.MultipleChoiceField(
+        label="Porque parou de comprar?",
+        choices=QUESTION_3_CHOICES,
+        widget=forms.CheckboxSelectMultiple,
+    )
+
+    segmento = forms.MultipleChoiceField(
+        label="Segmento da Loja",
+        choices=QUESTION_4_CHOICES,
+        widget=forms.CheckboxSelectMultiple,
+    )
+
+    tamanho = forms.ChoiceField(
+        label="Tamanho",
+        choices=QUESTION_5_CHOICES,
+        widget=forms.RadioSelect,
+    )
+
+    fez_pedido = forms.ChoiceField(
+        label="Fez o pedido",
+        choices=QUESTION_1_CHOICES,
+        widget=forms.RadioSelect,
+    )
+
+    sem_pedido = forms.ChoiceField(
+        label="Porque não efetuamos o Pedido",
+        choices=QUESTION_6_CHOICES,
+        widget=forms.RadioSelect,
+    )
+
+    concorrente = forms.ChoiceField(
+        label="Qual concorrente?",
+        choices=QUESTION_7_CHOICES,
+        widget=forms.RadioSelect,
+    )
+
+    dif_price = forms.ChoiceField(
+        label="Diferenca de Preco",
+        choices=QUESTION_8_CHOICES,
         widget=forms.RadioSelect,
     )
 
     # Text area for comments
-    comments = forms.CharField(
-        label="Any additional comments?",
+    obs = forms.CharField(
+        label="Observacoes",
         widget=forms.Textarea,
-        required=False,
+        required=True,
     )
 
 
